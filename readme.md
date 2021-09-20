@@ -6,10 +6,6 @@
 - HTML
 - javascript
 
-## Live Demo
-
-[Live Demo Link](https://roshan-bajgain.github.io/)
-
 
 ## Getting Started
 

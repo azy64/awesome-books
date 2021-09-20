@@ -3,6 +3,22 @@ const container = document.querySelector('#books_display');
 const title = document.querySelector('#text_title');
 const author = document.querySelector('#text_author');
 const add = document.querySelector('#add');
+const remove = () => {
+  const remove = document.querySelectorAll('.remove');
+  remove.forEach((element) => {
+    const id = parseInt(element.id, 10);
+    element.addEventListener('click', () => {
+      const newbooks = books.filter((book) => {
+        console.log('this is the id ', book.id);
+        if (book.id !== id) return book;
+      });
+      books = newbooks;
+      localStorage.setItem('books', JSON.stringify(books));
+      // eslint-disable-next-line no-use-before-define
+      displayData(books);
+    });
+  });
+};
 const displayData = (books) => {
   let tmp = '';
   // eslint-disable-next-line no-plusplus
@@ -11,11 +27,13 @@ const displayData = (books) => {
         <div>
             <div>${books[i].title}</div>
             <div>${books[i].author}</div>
-            <button id="${books[i].id}" class="remove">remove</button>
-        </div>;
+
+            <button class = "remove" id="${books[i].id}">remove</button>
+        </div> <hr>
         `;
   }
   container.innerHTML = tmp;
+  remove();
 };
 const loadData = () => {
   if (localStorage.getItem('books')) {
@@ -32,5 +50,6 @@ const saveData = () => {
     displayData(books);
   });
 };
+
 loadData();
 saveData();

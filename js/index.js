@@ -9,8 +9,8 @@ const remove = () => {
     const id = parseInt(element.id, 10);
     element.addEventListener('click', () => {
       const newbooks = books.filter((book) => {
-        console.log('this is the id ', book.id);
         if (book.id !== id) return book;
+        return '';
       });
       books = newbooks;
       localStorage.setItem('books', JSON.stringify(books));
@@ -43,11 +43,16 @@ const loadData = () => {
 };
 const saveData = () => {
   add.addEventListener('click', () => {
-    const num = books.length + 1;
-    const book = { id: num, title: title.value, author: author.value };
-    books.push(book);
-    localStorage.setItem('books', JSON.stringify(books));
-    displayData(books);
+    if (title.value.length !== 0 && author.value.length !== 0) {
+      const num = books.length + 1;
+      const book = { id: num, title: title.value, author: author.value };
+      books.push(book);
+      localStorage.setItem('books', JSON.stringify(books));
+      displayData(books);
+      title.value = '';
+      author.value = '';
+    // eslint-disable-next-line no-alert
+    } else alert('the title and author should not be empty!');
   });
 };
 

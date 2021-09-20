@@ -34,6 +34,7 @@ To get a local copy up and running follow these simple example steps.
 
 👤 **Azaria azy**
 - GitHub: [@Azaria azy](https://github.com/azy64)
+- Email: [@Azaria azy](allysaidi64@gmail.com)
 
 
 ## 🤝 Contributing

@@ -11,11 +11,12 @@ const displayData = (books) => {
         <div>
             <div>${books[i].title}</div>
             <div>${books[i].author}</div>
-            <button id="${books[i].id}">remove</button>
-        </div>;
-        `;
+            <button class = "remove" id="${books[i].id}">remove</button>
+        </div> <hr>
+        `
   }
   container.innerHTML = tmp;
+  remove();
 };
 const loadData = () => {
   if (localStorage.getItem('books')) {
@@ -32,5 +33,23 @@ const saveData = () => {
     displayData(books);
   });
 };
+const remove = () =>{
+  const remove = document.querySelectorAll('.remove');
+  remove.forEach(function (element) {
+    let id = parseInt(element.id);
+    element.addEventListener('click',() => {
+      let newbooks = books.filter (function (book) {
+        console.log('this is the id ',book.id);
+        if (book.id !== id)
+        return book;
+      })
+      books = newbooks;
+      localStorage.setItem('books', JSON.stringify(books));
+      displayData(books);
+    })
+  })
+}
 loadData();
 saveData();
+
+

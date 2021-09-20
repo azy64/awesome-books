@@ -10,6 +10,7 @@ const remove = () => {
     element.addEventListener('click', () => {
       const newbooks = books.filter((book) => {
         if (book.id !== id) return book;
+        return '';
       });
       books = newbooks;
       localStorage.setItem('books', JSON.stringify(books));

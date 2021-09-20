@@ -11,7 +11,7 @@ const displayData = (books) => {
         <div>
             <div>${books[i].title}</div>
             <div>${books[i].author}</div>
-            <button id="${books[i].id}">remove</button>
+            <button id="${books[i].id}" class="remove">remove</button>
         </div>;
         `;
   }

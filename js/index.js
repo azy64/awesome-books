@@ -11,6 +11,7 @@ class Libraries {
       localStorage.setItem('id', this.id);
       this.displayData(this.books);
     }
+
     static displayData = () => {
       const container = document.querySelector('#books_display');
       let tmp = '';
@@ -28,6 +29,7 @@ class Libraries {
       const bookToRemove = document.querySelectorAll('.remove');
       bookToRemove.forEach(this.remove);
     }
+
     static remove = (element) => {
       const id = parseInt(element.id, 10);
       const container = document.querySelector('#books_display');
@@ -48,7 +50,6 @@ class Libraries {
       });
     }
 
-
     static loadData = () => {
       if (localStorage.getItem('books')) {
         this.books = JSON.parse(localStorage.getItem('books'));
@@ -63,7 +64,7 @@ const author = document.querySelector('#text_author');
 const add = document.querySelector('#add');
 
 Libraries.loadData();
- Libraries.displayData();
+Libraries.displayData();
 add.addEventListener('click', () => {
   Libraries.add(title.value, author.value);
   title.value = '';

@@ -37,8 +37,9 @@ const displayData = (books) => {
         `;
   }
   container.innerHTML = tmp;
-  const bookToRemove = document.querySelectorAll('.remove');
-  bookToRemove.forEach(remove);
+   const bookToRemove = document.querySelectorAll('.remove');
+   bookToRemove.forEach(remove);
+  
 };
 
 const loadData = () => {

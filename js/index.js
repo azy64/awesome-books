@@ -64,13 +64,7 @@ class Libraries {
 const title = document.querySelector('#text_title');
 const author = document.querySelector('#text_author');
 const add = document.querySelector('#add');
+// const for GUI
 
-Libraries.loadData();
-Libraries.displayData();
-add.addEventListener('click', () => {
-  if (title.value && author.value) {
-    Libraries.add(title.value, author.value);
-    title.value = '';
-    author.value = '';
-  }
-});
+// const dateTime = new Date();
+// put your script here------

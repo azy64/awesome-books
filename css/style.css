@@ -23,8 +23,18 @@
   width: 25%;
 }
 
+.w-75 {
+  width: 75%;
+}
+
 .grid {
-  display: grid;
+  display: grid !important;
+}
+
+.big-container {
+  width: 1200px;
+  margin-left: 0;
+  transition: margin-left 1s;
 }
 
 .grid-col-1 {
@@ -32,7 +42,35 @@
 }
 
 .grid-col-2 {
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto;
+}
+
+.grid-col-3 {
+  grid-template-columns: 56.2% 56.2% 56.2%;
+}
+
+.ml-less-0 {
+  margin-left: 0;
+}
+
+.mb {
+  margin-bottom: 150px;
+}
+
+.mt {
+  margin-top: 45px !important;
+}
+
+.ml-less-100 {
+  margin-left: -100%;
+}
+
+.ml-less-200 {
+  margin-left: -200%;
+}
+
+.grid-row-2 {
+  grid-template-rows: auto auto !important;
 }
 
 .grid-col-gap {
@@ -48,6 +86,10 @@
   text-align: center;
 }
 
+.text-black {
+  color: black;
+}
+
 .text-right {
   text-align: end;
 }
@@ -58,6 +100,14 @@
 
 .p-10 {
   padding: 7px;
+}
+
+.pl-10 {
+  padding-left: 10px;
+}
+
+.ml-10 {
+  margin-left: 10px;
 }
 
 .wpx-100 {
@@ -84,4 +134,48 @@
 
 .book:nth-child(odd) {
   background-color: #dedede;
+}
+
+.list-style-none {
+  list-style: none;
+}
+
+.inline {
+  display: inline;
+}
+
+.d-block {
+  display: block;
+}
+
+.text-bolder {
+  font-weight: bolder;
+}
+
+.text-medium {
+  font-size: 21px;
+}
+
+.text-decoration-none {
+  text-decoration: none;
+}
+
+.border-right {
+  border-right: 1px outset black;
+}
+
+.overflow-hidden {
+  overflow: hidden !important;
+}
+
+.h-300 {
+  height: 300px;
+}
+
+.overflow-scroll {
+  overflow-y: scroll;
+}
+
+.active {
+  color: blue;
 }

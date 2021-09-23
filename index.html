@@ -1,36 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/style.css" type="text/css"/>
+    <link rel="stylesheet" href="./css/style.css" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/luxon@2.0.2/build/global/luxon.min.js"></script>
 </head>
+
 <body>
-    <header>
-        <h1 class="text-center">All awesome Books</h1>
+    <!--menu of the book application-->
+    <header class="w-75 m-auto">
+        <nav class="grid grid-col-2 border-black">
+            <div class="p-10">
+                <a class="d-block text-bolder text-medium ml-10 p-10 text-decoration-none text-black" href="">Awesome
+                    Books</a>
+            </div>
+            <div class="text-right">
+                <ul class="list-style-none">
+                    <li class="inline border-right p-10">
+                        <a class="text-decoration-none text-black active" id="item1" href=""> List</a>
+                    </li>
+                    <li class="inline border-right p-10">
+                        <a class="text-decoration-none text-black" id="item2" href=""> Add new</a>
+                    </li>
+                    <li class="inline p-10">
+                        <a class="text-decoration-none text-black" id="item3" href=""> Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     </header>
-    <section class="grid grid-col-1 align-center"> 
-        <div id="books_display" class="border-black width-50">
-            <!--books-->
+    <!--container for displaying time-->
+    <div class="w-75 m-auto text-right p-10">
+        <span id="time"></span>
+    </div>
+    <section class="align-center w-50 m-auto overflow-hidden">
+        
+        <div class="big-container grid grid-col-3 ml-less-50">
+            <!--container to display books-->
+            <div>
+                <h2 class="text-center">All awesome Books</h2>
+                <div id="books_display" class="border-black width-50 h-300 overflow-scroll">
+                    <!--books-->
+                </div>
+            </div>
+            <!--form to add a new book-->
+            <div id="add_book" class="p text-center">
+                <h2 class="text-center">Add a new Book</h2>
+                <div id="title">
+                    <input class="border-black w-50" type="text" id="text_title" placeholder="Title"
+                        aria-labelledby="title" maxlength="255" required />
+                </div>
+                <br>
+                <div id="author">
+                    <input class="border-black w-50" type="text" id="text_author" placeholder="author"
+                        aria-labelledby="author" maxlength="255" required />
+                </div>
+                <br>
+                <div class="text-right w-50 m-auto">
+                    <button id="add" class="btn-shadow">Add</button>
+                </div>
+
+            </div>
+            <!--contact information-->
+            <div class="p-10">
+                <h2 class="text-center">Contact Information</h2>
+                <p>
+                    Do have any questions or you just want to say "Hello" ?<br>
+                    You can reach out to us!
+                </p>
+                    <ul>
+                        <li>Our e-mails: allysaidi64@gmail.com, roshan.bazgain@gamil.com </li>
+                        <li>Our phone numers: +33753200240, +9779810088449</li>
+                        <li>
+                            <address> Our addresses: 136 rue des murlins 45000, France and Arjundhara 08, Jhapa Nepal
+                            </address>
+                        </li>
+                    </ul>
+            </div>
         </div>
-        <div id="add_book" class="p text-center">
-            <h2 class="text-center">Add a new Book</h2>
-            <div id="title">
-                <input class="border-black w-50" type="text" id="text_title" placeholder="Title" aria-labelledby="title" maxlength="255" required/>
-            </div>
-            <br>
-            <div id="author">
-                <input class="border-black w-50" type="text" id="text_author" placeholder="author" aria-labelledby="author" maxlength="255" required/>
-            </div>
-            <br>
-            <div class="text-right w-50 m-auto">
-                <button  id="add" class="btn-shadow">Add</button>
-            </div>
-            
-        </div>
+
     </section>
+    <footer class="p-10 w-75 border-black m-auto mt">
+        Copyright ...
+    </footer>
+    <script>
+        let DateTime = luxon.DateTime;
+        let dt = DateTime.local();
+        const timeTag = document.querySelector('span');
+        timeTag.innerHTML = `${dt.toLocaleString(DateTime.DATETIME_MED) }`;
+    </script>
     <script src="./js/index.js"></script>
-</body>
+    </body>
+
 </html>

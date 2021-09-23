@@ -71,8 +71,6 @@ const item3 = document.querySelector('#item3');
 const bigContainer = document.querySelector('.big-container');
 const anchors = document.querySelectorAll('nav ul a');
 const timeTag = document.querySelector('time');
-// const dateTime = new Date();
-// put your script here------
 timeTag.innerHTML = `${new Date().toLocaleString()}`;
 Libraries.loadData();
 Libraries.displayData();

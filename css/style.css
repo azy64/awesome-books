@@ -44,6 +44,7 @@
 .grid-col-2 {
   grid-template-columns: auto auto;
 }
+
 .grid-col-3 {
   grid-template-columns: 56.2% 56.2% 56.2%;
 }
@@ -63,6 +64,7 @@
 .ml-less-100 {
   margin-left: -100%;
 }
+
 .ml-less-200 {
   margin-left: -200%;
 }
@@ -100,11 +102,11 @@
   padding: 7px;
 }
 
-.pl-10{
+.pl-10 {
   padding-left: 10px;
 }
 
-.ml-10{
+.ml-10 {
   margin-left: 10px;
 }
 
@@ -159,7 +161,7 @@
 }
 
 .border-right {
-  border-right: 1px outset black ;
+  border-right: 1px outset black;
 }
 
 .overflow-hidden {

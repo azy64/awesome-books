@@ -65,6 +65,51 @@ const title = document.querySelector('#text_title');
 const author = document.querySelector('#text_author');
 const add = document.querySelector('#add');
 // const for GUI
-
+const item1 = document.querySelector('#item1');
+const item2 = document.querySelector('#item2');
+const item3 = document.querySelector('#item3');
+const bigContainer = document.querySelector('.big-container');
+const anchors = document.querySelectorAll('nav ul a');
+const timeTag = document.querySelector('time');
 // const dateTime = new Date();
 // put your script here------
+timeTag.innerHTML = `${new Date().toLocaleString()}`;
+Libraries.loadData();
+Libraries.displayData();
+add.addEventListener('click', () => {
+  if (title.value && author.value) {
+    Libraries.add(title.value, author.value);
+    title.value = '';
+    author.value = '';
+  }
+});
+item1.addEventListener('click', (e) => {
+  bigContainer.classList.remove('ml-less-100');
+  bigContainer.classList.remove('ml-less-200');
+  bigContainer.classList.add('ml-less-0');
+  anchors.forEach((elementNode) => {
+    elementNode.classList.remove('active');
+  });
+  item1.classList.add('active');
+  e.preventDefault();
+});
+item2.addEventListener('click', (e) => {
+  bigContainer.classList.remove('ml-less-0');
+  bigContainer.classList.remove('ml-less-200');
+  bigContainer.classList.add('ml-less-100');
+  anchors.forEach((elementNode) => {
+    elementNode.classList.remove('active');
+  });
+  item2.classList.add('active');
+  e.preventDefault();
+});
+item3.addEventListener('click', (e) => {
+  bigContainer.classList.remove('ml-less-0');
+  bigContainer.classList.remove('ml-less-100');
+  bigContainer.classList.add('ml-less-200');
+  anchors.forEach((elementNode) => {
+    elementNode.classList.remove('active');
+  });
+  item3.classList.add('active');
+  e.preventDefault();
+});
